@@ -28,7 +28,9 @@ app.post('/webhooks/orders/create', async (req, res) => {
 
   if (hash === hmac) {
     // It's a match! All good
+    const order = JSON.parse(body.toString())
     console.log('Hello, it came from Shopify!')
+    console.log(order)
     res.sendStatus(200)
   } else {
     // No match! This request didn't originate from Shopify
