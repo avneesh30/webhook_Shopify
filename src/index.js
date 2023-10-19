@@ -16,8 +16,6 @@ app.get('/', (req, res) => {
 });
 
 app.post('/webhooks/orders/create', async (req, res) => {
-  console.log('🎉 We got an order!')
-
 
   const hmac = req.get('X-Shopify-Hmac-Sha256')
 
